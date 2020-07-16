@@ -1,8 +1,11 @@
 import Link from "next/link";
-
-export function MainLayout({ children }) {
+import Head from "next/head";
+export function MainLayout({ children, title = "Next App Page" }) {
   return (
     <>
+      <Head>
+        <title>{title}</title>
+      </Head>
       <nav>
         <Link href={"/"}>
           <a>Home</a>
@@ -15,6 +18,20 @@ export function MainLayout({ children }) {
         </Link>
       </nav>
       <main>{children}</main>
+      <style jsx global>{`
+        nav {
+          background: grey;
+        }
+        nav a {
+          color: white;
+          margin: 0 5px;
+          text-decoration: none;
+        }
+
+        nav a:hover {
+          text-decoration: underline;
+        }
+      `}</style>
     </>
   );
 }
