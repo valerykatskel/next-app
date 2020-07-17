@@ -1,4 +1,5 @@
 //import { useState, useEffect } from "react";
+import Link from "next/link";
 import { MainLayout } from "../components/MainLayout";
 
 export default function Posts({ posts }) {
@@ -16,7 +17,15 @@ export default function Posts({ posts }) {
   return (
     <MainLayout title="Posts page">
       <h1>Posts page</h1>
-      <pre>{JSON.stringify(posts, null, 2)}</pre>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <Link href={`/post/[id]`} as={`/post/${post.id}`}>
+              <a>{post.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </MainLayout>
   );
 }
