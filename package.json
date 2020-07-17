@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "serve": "concurrently \"yarn dev\" \"yarn mock\"",
     "mock": "json-server -w db.json -p 4200 450"
   },
   "dependencies": {
@@ -13,5 +14,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0"
   }
 }
