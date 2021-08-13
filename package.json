@@ -10,7 +10,7 @@
     "mock": "json-server -w db.json -p 4200 2750"
   },
   "dependencies": {
-    "next": "9.4.4",
+    "next": "11.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "sass": "^1.26.10"
